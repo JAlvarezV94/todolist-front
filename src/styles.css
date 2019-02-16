@@ -1,0 +1,29 @@
+.app-container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container{
+    width: 80%;
+    height: 90vh;
+    background-color: #fbfbfb;
+    border: 1px solid;
+    border-radius: 3px;
+    overflow: auto;
+}
+
+.list-container::-webkit-scrollbar-track{
+	background-color: #fbfbfb;
+}   
+
+.list-container::-webkit-scrollbar{
+	width: 12px;
+}
+
+.list-container::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	background-color: #2186d6;
+}

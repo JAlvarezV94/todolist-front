@@ -1,0 +1,65 @@
+.element{
+    margin: 10px;
+    height: 100px;
+    padding: 15px;
+    /*background-color: #2186d6;*/
+    border: 1px solid;
+    border-left: 3px solid #2186d6;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.element:hover{
+    box-shadow: 0 0 9px 1px #d6d6d6;
+}
+
+.tdl-check-label{
+    color: black;
+    font-size: 21px;
+    font-family: taskFont;
+}
+
+.tdl-actions{
+    display: flex;
+    font-size: 30px;
+}
+
+.tdl-actions div{
+    margin: 10px;
+    border-radius: 100px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.tdl-actions div:hover{
+    background-color: #2186d6;
+
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox] + label span{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background: url('../../statics/imgs/checkbox-unchecked.png');
+}
+
+input[type=checkbox]:checked + label span{
+    background: url('../../statics/imgs/checkbox-checked.png')
+}
+
+@font-face{
+    font-family: taskFont;
+    src: url('../../statics/fonts/Dosis-Medium.ttf');
+}
