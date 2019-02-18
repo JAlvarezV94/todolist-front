@@ -7,42 +7,33 @@ class ListContainer extends Component{
     constructor(props){
         super(props);
         this.state = {
-            screenToShow: 0 //0-> list, 1-> Edit, 2-> Delete
-        }
-
-        this.whatToShow = this.whatToShow.bind(this);
-        this.onEditClicked = this.onEditClicked.bind(this);
-    }
-
-    whatToShow(){
-        switch(this.state.screenToShow){
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                console.log('This action is not allowed here');
+            tasks: []
         }
     }
 
-    showListScreen(){
-        
+
+    componentDidMount(){
+        fetch('http://localhost:8080/task/list')
+            .then((response) => {
+                return response.json();
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .then((json) => {
+                this.setState({tasks: json});
+            });
     }
-    onEditClicked(selectedTask) {
-        
-    }
+
 
     render(){
 
-        const tasks = this.props.tasks;
         return(
             <div className = "list-container">
                 {
-                    tasks.map(task => {
-                        if(!task.isChecked)
-                            return <ListElement title = {task.title}/>
+                    this.state.tasks.map(task => {
+                        if(!task.is_done)
+                            return <ListElement title = {task.name}/>
                         else
                             return false;
                     })

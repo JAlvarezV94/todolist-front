@@ -1,8 +1,28 @@
 .app-container{
     display: flex;
+    flex-direction: column-reverse;
     height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+.tdl-button-ok{
+    margin-top: 10px;
+    background-color: #2186d6;
+    border: none;
+    padding: 8px 40px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.tdl-button-ok:hover{
+    background-color: #125d98;
+}
+
+.tdl-button-ok:active{
+    background-color: #fbfbfb;
+    color: #2186d6;
+    border: 1px solid #2186d6;
 }
 
 .list-container{

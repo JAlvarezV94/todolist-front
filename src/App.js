@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
 import ListContainer from './todo-list/containers/list-container';
+import NewTask from './todo-list/components/new-task';
 
 class App extends Component {
-  render() {
 
-    const tasks = [
-      {title: "Besis de fresis", isChecked: true},
-      {title: "Limpiar y eso", isChecked: false},
-      {title: "Subir esto a github", isChecked: false},
-      {title: "Hacer una buena app :)", isChecked: false},
-      {title: "Pasar los elementos de lista a tamaño movil con media query", isChecked: false},
-      {title: "Hacer un estilo propio para el scrollbar", isChecked: false},
-      {title: "Hacer el menú de editar", isChecked: false},
-      {title: "Crear las funciones de borrar y editar", isChecked: false},
-    ];
+  constructor(){
+    super();
+    this.whatToRender = this.whatToRender.bind(this);
+    this.onAddTaskClicked = this.onAddTaskClicked.bind(this);
+    this.state = {
+      toShow: 0, //0-> listContainer 1-> new task
+    }
+  }
+
+  whatToRender(){
+    if(this.state.toShow === 0)
+      return <ListContainer/>;
+    else
+      return <NewTask/>;
+  }
+
+  onAddTaskClicked(){
+    this.setState({toShow: 1});
+  }
+
+  render() {
 
     return (
       <div className = "app-container">
-          <ListContainer tasks = {tasks}/>
+            <button className = "tdl-button-ok" onClick={this.onAddTaskClicked}>
+                new task!
+            </button>
+            {
+              this.whatToRender()
+            }
       </div>
     );
   }
