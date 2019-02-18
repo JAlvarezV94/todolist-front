@@ -33,7 +33,11 @@ class ListContainer extends Component{
                 {
                     this.state.tasks.map(task => {
                         if(!task.is_done)
-                            return <ListElement title = {task.name}/>
+                            return <ListElement 
+                                key = {task.id}
+                                id = {task.id} 
+                                title = {task.name} 
+                                onDelete = {this.props.onDelete}/>
                         else
                             return false;
                     })

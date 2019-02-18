@@ -1,13 +1,12 @@
 .app-container{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .tdl-button-ok{
-    margin-top: 10px;
     background-color: #2186d6;
     border: none;
     padding: 8px 40px;
@@ -46,4 +45,33 @@
 {
 	border-radius: 5px;
 	background-color: #2186d6;
+}
+
+.modal{
+    position: fixed;
+    z-index: 1;
+    background-color: #00000057;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*display: none;*/
+}
+
+.modal-dialog{
+    background-color: #ffffff;
+    padding: 15px;
+    font-size: 30px;
+    border: 1px solid;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    text-align: center;
+}
+
+.modal-dialog div{
+    display: flex;
+    justify-content: space-evenly;
 }

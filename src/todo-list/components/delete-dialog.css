@@ -1,0 +1,29 @@
+.cancel-button{
+    background: none;
+    border-radius: 3px;
+    border: none;
+    color: #ff1d1d;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+.cancel-button:hover{
+    background-color: #ff1d1d;
+    color: #ffffff;
+}
+
+.delete-button{
+    background: none;
+    border: 1px solid #2186d6;
+    padding: 5px 20px;
+    border-radius: 3px;
+    font-size: 19px;
+    color: #2186d6;
+    font-weight: bold;
+}
+
+.delete-button:hover{
+    background-color: #2186d6;
+    color: white;
+}
